@@ -8,7 +8,7 @@ $('h1').click(function(){
 });
 
 function getMusicData(searchTerm) {
-    var url= "https://api.soundcloud.com/tracks?q=beyonce&client_id=5aa8e389ba4e24b6106af5159ab3e344";
+    var url= "https://api.soundcloud.com/tracks?q=" + searchTerm + "&client_id=5aa8e389ba4e24b6106af5159ab3e344";
     $.ajax({
           url: url ,
           method: "GET",
@@ -18,6 +18,7 @@ function getMusicData(searchTerm) {
               
               songs.forEach(function(song){
                   console.log(song);
+                  $("body").append("<img src='" + song.artwork_url + "'/>") 
               });
               
               
